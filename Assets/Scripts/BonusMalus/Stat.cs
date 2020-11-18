@@ -12,7 +12,7 @@ public class Stat : MonoBehaviour {
             Destroy (gameObject);
         }
 
-        if (collision.gameObject.tag == "minotaure") {
+        if (collision.gameObject.tag == "minotaur") {
             Destroy (gameObject);
         }
     }

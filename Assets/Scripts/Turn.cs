@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Turn : MonoBehaviour {
     public int turnNumber;
     public GameObject panelTurnInfo;
     public Text textTurnInfo;
+    public GameObject panelEndGameInfo;
+    public Text textEndGameInfo;
     public List<Warrior> warriors;
+    public ChangeScene changeScene;
 
     void Start () {
         turnNumber = 0;
@@ -15,10 +19,6 @@ public class Turn : MonoBehaviour {
     }
 
     void Update () {
-
-        if(warriors[turnNumber].phase == "dead") {
-
-        }
 
         if (warriors[turnNumber].phase == "opponent turn" && !panelTurnInfo.activeSelf) {
             warriors[turnNumber].chooseStrategy ();
@@ -30,6 +30,17 @@ public class Turn : MonoBehaviour {
             StartCoroutine (displayTurnInfo (warriors[turnNumber].warriorName + " turn"));
         }
 
+        if (warriors[turnNumber].phase == "end game") {
+            string winners = "";
+            foreach (Warrior warrior in warriors) {
+                if (warrior.lifePoints > 0) {
+                    winners += warrior.warriorName + " ";
+                }
+            }
+            Scene scene = SceneManager.GetActiveScene ();
+            warriors[turnNumber].phase = "wait";
+            StartCoroutine (endGame (winners + " win !", 2));
+        }
     }
 
     public void nextTurn () {
@@ -45,5 +56,13 @@ public class Turn : MonoBehaviour {
         textTurnInfo.text = info;
         yield return new WaitForSeconds (1);
         panelTurnInfo.SetActive (false);
+    }
+
+    public IEnumerator endGame (string info,int timeToWait) {
+        panelTurnInfo.SetActive (true);
+        textTurnInfo.text = info;
+        yield return new WaitForSeconds (timeToWait);
+        panelTurnInfo.SetActive (false);
+        panelEndGameInfo.SetActive (true);
     }
 }

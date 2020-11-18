@@ -13,7 +13,7 @@ public class Warrior : MonoBehaviour {
     public string phase = "opponent turn";
 
     void OnCollisionStay2D (Collision2D collision) {
-        if (collision.gameObject.tag == "minotaure" || collision.gameObject.tag == "player") {
+        if (collision.gameObject.tag == "minotaur" || collision.gameObject.tag == "player") {
             this.inContact = true;
             this.ObjectInContact = collision.gameObject.GetComponent<Warrior> ();
         }
@@ -26,19 +26,15 @@ public class Warrior : MonoBehaviour {
     public void attack () {
         if (this.phase == "my turn" && inContact == true) {
             this.ObjectInContact.takeDamage (attackPoints);
-            phase = "end phase";
+            this.phase = "end phase";
         }
     }
 
     public void takeDamage (float damage) {
         this.lifePoints -= damage;
-        // if(this.lifePoints <= 0) {
-        //     phase = "dead";
-        // }
-    }
-
-    public void receiveBonus(string stat) {
-        
+        if(this.lifePoints <= 0) {
+            phase = "end game";
+        }
     }
 
     public void chooseStrategy () {
