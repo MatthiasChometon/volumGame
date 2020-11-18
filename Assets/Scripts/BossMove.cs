@@ -5,7 +5,6 @@ using UnityEngine;
 public class BossMove : MonoBehaviour {
     public Vector3 translationH;
     public Vector3 translationV;
-    public Turn turn;
     public GameObject boss;
     private bool bossKnowWhereToGo = false;
     private int maxPath = 5;
