@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moveBoss : MonoBehaviour {
+public class BossMove : MonoBehaviour {
     public Vector3 translationH;
     public Vector3 translationV;
     public Turn turn;
@@ -14,30 +14,33 @@ public class moveBoss : MonoBehaviour {
     private int pathPosition = 0;
     private bool positionBeforeAnimationActivated = false;
     private Vector3 positionBeforeAnimation;
+    public Warrior warrior;
+    private int positionInterval = 1;
 
     void Start () {
-        translationH.y = 2f;
-        translationV.x = 2f;
+        translationH.y = 80f;
+        translationV.x = 80f;
     }
 
     void Update () {
-        if (turn.turnNumber % 3 == 1) {
+        if (warrior.phase == "move") {
             if (!bossKnowWhereToGo) {
                 pathPosition = 0;
                 path = SearchPath ();
             }
             if (bossKnowWhereToGo) {
                 if (path.Count > pathPosition) {
-
                     if (positionBeforeAnimationActivated == false) {
                         positionBeforeAnimation = boss.transform.position;
                         positionBeforeAnimationActivated = true;
                     }
-
-                    if ((System.Math.Round (boss.transform.position.y, 2) == System.Math.Round (positionBeforeAnimation.y + path[pathPosition].y, 2)) && (System.Math.Round (boss.transform.position.x, 2) == System.Math.Round (positionBeforeAnimation.x + path[pathPosition].x, 2)) && (System.Math.Round (boss.transform.position.z, 2) == System.Math.Round (positionBeforeAnimation.z + path[pathPosition].z, 2))) {
+                    if (( boss.transform.position.x > positionBeforeAnimation.x + path[pathPosition].x - positionInterval) && (boss.transform.position.x < positionBeforeAnimation.x + path[pathPosition].x + positionInterval) &&
+                        ( boss.transform.position.y > positionBeforeAnimation.y + path[pathPosition].y - positionInterval) && (boss.transform.position.y < positionBeforeAnimation.y + path[pathPosition].y + positionInterval) &&
+                        ( boss.transform.position.z > positionBeforeAnimation.z + path[pathPosition].z - positionInterval) && (boss.transform.position.z < positionBeforeAnimation.z + path[pathPosition].z + positionInterval))
+                    {
                         positionBeforeAnimationActivated = false;
                         pathPosition++;
-                        turn.nextTurn ();
+                        warrior.phase = "end phase";
                     } else {
                         transform.Translate (path[pathPosition] * Time.deltaTime);
                     }
@@ -45,7 +48,6 @@ public class moveBoss : MonoBehaviour {
                 }
 
                 if (path.Count == pathPosition) {
-                    Debug.Log (bossKnowWhereToGo);
                     bossKnowWhereToGo = false;
                 }
             }
