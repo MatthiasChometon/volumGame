@@ -6,6 +6,7 @@ public class Warrior : MonoBehaviour {
     public string warriorName;
     public float lifePoints;
     public float attackPoints;
+    public float defensePoints = 0;
     public bool inContact = false;
     protected Warrior ObjectInContact;
     public string type = "";
@@ -31,7 +32,7 @@ public class Warrior : MonoBehaviour {
     }
 
     public void takeDamage (float damage) {
-        this.lifePoints -= damage;
+        this.lifePoints -= Mathf.Abs(damage - defensePoints);
         if(this.lifePoints <= 0) {
             phase = "end game";
         }

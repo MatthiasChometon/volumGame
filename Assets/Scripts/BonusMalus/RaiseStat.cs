@@ -12,7 +12,7 @@ public class RaiseStat : Stat {
                 collision.gameObject.GetComponent<Warrior> ().attackPoints += 1;
                 break;
             case 2:
-                collision.gameObject.GetComponent<Warrior> ().lifePoints += 1;
+                collision.gameObject.GetComponent<Warrior> ().defensePoints += 1;
                 break;
         }
     }

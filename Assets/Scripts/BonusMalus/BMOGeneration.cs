@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BMOGeneration : MonoBehaviour {
-    public int luckGeneration = 10;
+    public int luckGeneration = 2;
     public GameObject bonus;
     // public GameObject malus;
     // public GameObject item;
