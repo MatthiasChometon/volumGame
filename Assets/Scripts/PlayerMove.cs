@@ -12,8 +12,8 @@ public class PlayerMove : MonoBehaviour {
     public Warrior warrior;
 
     void Start () {
-        translationH.y = 80f;
-        translationV.x = 80f;
+        translationH.y = 54f;
+        translationV.x = 54f;
     }
 
     void Update () {

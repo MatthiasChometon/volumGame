@@ -9,7 +9,7 @@ public class WallMovement : MonoBehaviour {
     public Transform block;
 
     void Start () {
-        int luckWallMovement = Random.Range (1, 3);
+        int luckWallMovement = Random.Range (1, 2);
 
         if (luckWallMovement == 1) {
             generateMovementWall ();
@@ -18,8 +18,8 @@ public class WallMovement : MonoBehaviour {
     }
 
     private void generateMovementWall () {
-        translationH.y = 2f;
-        translationV.x = 2f;
+        translationH.y = 54f;
+        translationV.x = 54f;
 
         switch (movementDirection) {
             case "t":
@@ -29,7 +29,7 @@ public class WallMovement : MonoBehaviour {
                 block.Translate (-translationH);
                 break;
             case "l":
-                block.Translate (translationV);
+                block.Translate (-translationV);
                 break;
             case "r":
                 block.Translate (translationV);

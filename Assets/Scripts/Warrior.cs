@@ -26,16 +26,17 @@ public class Warrior : MonoBehaviour {
 
     public void attack () {
         if (this.phase == "my turn" && inContact == true) {
-            this.ObjectInContact.takeDamage (attackPoints);
-            this.phase = "end phase";
+            this.phase = this.ObjectInContact.takeDamage (attackPoints);
         }
     }
 
-    public void takeDamage (float damage) {
+    public string takeDamage (float damage) {
         this.lifePoints -= Mathf.Abs(damage - defensePoints);
         if(this.lifePoints <= 0) {
-            phase = "end game";
+            return "end game";
         }
+        return "end phase";
+
     }
 
     public void chooseStrategy () {

@@ -58,7 +58,7 @@ public class Turn : MonoBehaviour {
         panelTurnInfo.SetActive (false);
     }
 
-    public IEnumerator endGame (string info,int timeToWait) {
+    public IEnumerator endGame (string info, int timeToWait) {
         panelTurnInfo.SetActive (true);
         textTurnInfo.text = info;
         yield return new WaitForSeconds (timeToWait);
