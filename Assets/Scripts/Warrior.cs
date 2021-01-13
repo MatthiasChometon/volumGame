@@ -8,7 +8,7 @@ public class Warrior : MonoBehaviour {
     public float attackPoints;
     public float defensePoints = 0;
     public bool inContact = false;
-    protected Warrior ObjectInContact;
+    public Warrior ObjectInContact;
     public string type = "";
     private PlayerMove playerMove;
     public string phase = "opponent turn";
@@ -25,7 +25,7 @@ public class Warrior : MonoBehaviour {
     }
 
     public void attack () {
-        if (this.phase == "my turn" && inContact == true) {
+        if (this.phase == "my turn" && inContact == true && this.ObjectInContact.type != this.type) {
             this.phase = this.ObjectInContact.takeDamage (attackPoints);
         }
     }

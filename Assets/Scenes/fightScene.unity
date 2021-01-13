@@ -1552,7 +1552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ground: {fileID: 1815820314}
-  caseSize: 70
+  caseSize: 20000
 --- !u!114 &242809292 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5229903704633576156, guid: 80b93cd33a2381b4ab7fdce082843e07,
@@ -3739,7 +3739,7 @@ Transform:
   m_GameObject: {fileID: 654394560}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.0023910573, y: -0.0037629553, z: -2}
-  m_LocalScale: {x: 0.0860419, y: 0.11431807, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.13, z: 1}
   m_Children: []
   m_Father: {fileID: 29230368}
   m_RootOrder: 0
@@ -3853,6 +3853,7 @@ MonoBehaviour:
   attackPoints: 4
   defensePoints: 0
   inContact: 0
+  ObjectInContact: {fileID: 0}
   type: boss
   phase: opponent turn
 --- !u!1001 &662174591
@@ -8671,7 +8672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ground: {fileID: 1815820314}
-  caseSize: 70
+  caseSize: 20000
 --- !u!114 &1490546487 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3467308316288701504, guid: 7b026ee1bfe43ad459512951d6c7baa9,
@@ -12136,12 +12137,12 @@ PrefabInstance:
     - target: {fileID: 3467308316288701509, guid: 7b026ee1bfe43ad459512951d6c7baa9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 300
+      value: 302
       objectReference: {fileID: 0}
     - target: {fileID: 3467308316288701509, guid: 7b026ee1bfe43ad459512951d6c7baa9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 153
+      value: 155
       objectReference: {fileID: 0}
     - target: {fileID: 3467308316288701509, guid: 7b026ee1bfe43ad459512951d6c7baa9,
         type: 3}
@@ -12511,12 +12512,12 @@ PrefabInstance:
     - target: {fileID: 5229903704633576150, guid: 80b93cd33a2381b4ab7fdce082843e07,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 842
+      value: 841
       objectReference: {fileID: 0}
     - target: {fileID: 5229903704633576150, guid: 80b93cd33a2381b4ab7fdce082843e07,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 369
+      value: 368
       objectReference: {fileID: 0}
     - target: {fileID: 5229903704633576150, guid: 80b93cd33a2381b4ab7fdce082843e07,
         type: 3}

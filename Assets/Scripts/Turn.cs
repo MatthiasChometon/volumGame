@@ -33,7 +33,7 @@ public class Turn : MonoBehaviour {
         if (warriors[turnNumber].phase == "end game") {
             string winners = "";
             foreach (Warrior warrior in warriors) {
-                if (warrior.lifePoints > 0) {
+                if (warrior.lifePoints > 0 && warrior.ObjectInContact != null)  {
                     winners += warrior.warriorName + " ";
                 }
             }
