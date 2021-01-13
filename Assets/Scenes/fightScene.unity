@@ -1552,7 +1552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ground: {fileID: 1815820314}
-  caseSize: 20000
+  caseSize: 70
 --- !u!114 &242809292 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5229903704633576156, guid: 80b93cd33a2381b4ab7fdce082843e07,
@@ -8672,7 +8672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ground: {fileID: 1815820314}
-  caseSize: 20000
+  caseSize: 70
 --- !u!114 &1490546487 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3467308316288701504, guid: 7b026ee1bfe43ad459512951d6c7baa9,
