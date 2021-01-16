@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1Inventory : MonoBehaviour
+public class Player2Inventory : MonoBehaviour
 {
     public InventoryObject inventory;
     // Start is called before the first frame update
@@ -20,4 +20,5 @@ public class Player1Inventory : MonoBehaviour
     {
         inventory.Container.Clear();
     }
+    
 }

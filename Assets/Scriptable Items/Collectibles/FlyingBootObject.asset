@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb2a48d70cdfa1499902b47db4df5d4, type: 3}
   m_Name: FlyingBootObject
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 7227637120883683784, guid: 8f240d5308390d0408ebebc69cbfc18c, type: 3}
   type: 1
-  description: 
+  name: Flying boot
   onemoreTurn: 0
