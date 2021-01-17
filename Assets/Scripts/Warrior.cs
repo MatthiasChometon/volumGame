@@ -6,8 +6,9 @@ public class Warrior : MonoBehaviour {
     public string warriorName;
     public float lifePoints;
     public float attackPoints;
+    public float defensePoints = 0;
     public bool inContact = false;
-    protected Warrior ObjectInContact;
+    public Warrior ObjectInContact;
     public string type = "";
     private PlayerMove playerMove;
     public string phase = "opponent turn";
@@ -24,17 +25,18 @@ public class Warrior : MonoBehaviour {
     }
 
     public void attack () {
-        if (this.phase == "my turn" && inContact == true) {
-            this.ObjectInContact.takeDamage (attackPoints);
-            phase = "end phase";
+        if (this.phase == "my turn" && inContact == true && this.ObjectInContact.type != this.type) {
+            this.phase = this.ObjectInContact.takeDamage (attackPoints);
         }
     }
 
-    public void takeDamage (float damage) {
-        this.lifePoints -= damage;
+    public string takeDamage (float damage) {
+        this.lifePoints -= Mathf.Abs(damage - defensePoints);
         if(this.lifePoints <= 0) {
-            phase = "dead";
+            return "end game";
         }
+        return "end phase";
+
     }
 
     public void chooseStrategy () {
