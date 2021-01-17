@@ -14,7 +14,7 @@ public class placeSprites : MonoBehaviour {
         labyListWall = GameObject.FindGameObjectsWithTag ("wall");
         labyListGround = GameObject.FindGameObjectsWithTag ("ground");
         labyListPlayer = GameObject.FindGameObjectsWithTag ("player");
-        labyListBoss = GameObject.FindGameObjectsWithTag ("minotaur");
+        labyListBoss = GameObject.FindGameObjectsWithTag ("boss");
         placeCase ();
         labyList.setBMO(labyListGround);
     }
