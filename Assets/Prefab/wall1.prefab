@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7062682496787364366}
   - component: {fileID: -5757810410108367093}
   - component: {fileID: 2803195745276439871}
-  - component: {fileID: -6804701272688767364}
   m_Layer: 0
   m_Name: wall1
   m_TagString: wall
@@ -99,32 +98,6 @@ MonoBehaviour:
   movementDirection: 
   block: {fileID: 7062682496787364365}
 --- !u!61 &2803195745276439871
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7062682496787364367}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0047619, y: 1.0047619}
-    newSize: {x: 1.0047619, y: 1.0047619}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.0047619, y: 1.0047619}
-  m_EdgeRadius: 0
---- !u!61 &-6804701272688767364
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
