@@ -22,11 +22,9 @@ public class InventoryObject : ScriptableObject {
         if (!hasItem) {
             Container.Add (new InventorySlot (_item, _amount));
         }
-    Debug.Log("bbbb");
     objectList = GameObject.FindGameObjectsWithTag ("object");
         foreach (GameObject item in objectList) {
             item.GetComponent<testInventory> ().testDisplay (Container);
-            Debug.Log("untruc");
         }
 
     }

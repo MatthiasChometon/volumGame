@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: de4d9c4a6c1270d45a656da8fee3e2e3
+<<<<<<< HEAD:Assets/Prefab.meta
+guid: ba796b1efc1563d46be42436cbc2ec23
+=======
+guid: 960cbbc4cd0e7d041b3bd1bfa5c8cd45
+>>>>>>> Amaury:Asset/Assets/Scenes.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
