@@ -9,10 +9,10 @@ public class RaiseStat : Stat {
 
         switch (bonusOrMalusRange) {
             case 1:
-                collision.gameObject.GetComponent<Warrior> ().attackPoints += 1;
+                collision.gameObject.GetComponent<Warrior> ().attackPoints += 3;
                 break;
             case 2:
-                collision.gameObject.GetComponent<Warrior> ().defensePoints += 1;
+                collision.gameObject.GetComponent<Warrior> ().defensePoints += 3;
                 break;
         }
     }
