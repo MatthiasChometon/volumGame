@@ -11,6 +11,7 @@ public class Warrior : MonoBehaviour {
     public string type = "";
     private PlayerMove playerMove;
     public string phase = "opponent turn";
+    public float defensePoints;
 
     void OnCollisionStay2D (Collision2D collision) {
         if (collision.gameObject.tag == "minotaur" || collision.gameObject.tag == "player") {
