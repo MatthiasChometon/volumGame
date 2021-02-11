@@ -11,7 +11,7 @@ public class BMOGeneration : MonoBehaviour {
     public bool BMOGenerated = false;
     public GameObject cube;
     public int cubeSize = 2;
-    public Vector3 middle = new Vector3 (570, 260, 0);
+    public Vector3 middle = new Vector3 (462, 260, 0);
 
     public void setAleaBMO (GameObject[] labyList) {
         int goodNumber = Random.Range (1, luckGeneration);
@@ -46,6 +46,7 @@ public class BMOGeneration : MonoBehaviour {
                 (origin.position.y - cubeSize + 1 - middle.y < -(labyCube.transform.position.y - middle.y)) &&
                 (origin.position.y + cubeSize - 1 - middle.y > -(labyCube.transform.position.y - middle.y))) {
                 labyCube.GetComponent<BMOGeneration> ().generateBMO (bmo);
+                Debug.Log("lol");
             }
         }
     }
