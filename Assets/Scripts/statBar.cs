@@ -7,6 +7,7 @@ public class statBar : MonoBehaviour {
     public Warrior player;
     public Slider sliderHealth;
     public Slider sliderDefense;
+    public Text attack;
 
     void Start () {
         getStat ();
@@ -19,6 +20,7 @@ public class statBar : MonoBehaviour {
     private void DisplayStat () {
         sliderHealth.value = player.lifePoints;
         sliderDefense.value = player.defensePoints;
+        attack.text = player.attackPoints.ToString();
     }
 
     private void getStat () {

@@ -25,15 +25,22 @@ public class Turn : MonoBehaviour {
         }
 
         if (warriors[turnNumber].phase == "end phase") {
-            warriors[turnNumber].phase = "opponent turn";
-            nextTurn ();
-            StartCoroutine (displayTurnInfo (warriors[turnNumber].warriorName + " turn"));
+            if (warriors[turnNumber].oneMoreTurn > 0) {
+                warriors[turnNumber].chooseStrategy ();
+                warriors[turnNumber].oneMoreTurn -= 1;
+            }
+
+            if (warriors[turnNumber].oneMoreTurn == 0) {
+                warriors[turnNumber].phase = "opponent turn";
+                nextTurn ();
+                StartCoroutine (displayTurnInfo (warriors[turnNumber].warriorName + " turn"));
+            }
         }
 
         if (warriors[turnNumber].phase == "end game") {
             string winners = "";
             foreach (Warrior warrior in warriors) {
-                if (warrior.lifePoints > 0 && warrior.ObjectInContact != null)  {
+                if (warrior.lifePoints > 0 && warrior.ObjectInContact != null) {
                     winners += warrior.warriorName + " ";
                 }
             }

@@ -13,6 +13,7 @@ public class Warrior : MonoBehaviour {
     private PlayerMove playerMove;
     public string phase = "opponent turn";
     public bool skipTurn = false;
+    public int oneMoreTurn = 0;
 
     void OnCollisionStay2D (Collision2D collision) {
         if (collision.gameObject.tag == "minotaur" || collision.gameObject.tag == "player") {

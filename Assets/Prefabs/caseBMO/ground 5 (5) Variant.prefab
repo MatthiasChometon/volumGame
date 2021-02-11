@@ -15,11 +15,14 @@ MonoBehaviour:
   luckGeneration: 10
   bonus: {fileID: 725113138173146429, guid: b478566398151654180f9adbc19a8cce, type: 3}
   malus: {fileID: 5055080077261661855, guid: d67aadf2004ec6446830de8e2d87ffb4, type: 3}
+  items:
+  - {fileID: 1231122244242271953, guid: 0a543a85f976b76418f225efff64707f, type: 3}
+  - {fileID: 5714085765424213789, guid: f9c8ca48678952c4992ec453cd6b8666, type: 3}
   origin: {fileID: 6146271323545397306}
   BMOGenerated: 0
   cube: {fileID: 6146271323545397308}
   cubeSize: 54
-  middle: {x: 570, y: 260, z: 0}
+  middle: {x: 462, y: 260, z: 0}
 --- !u!1001 &4411280483949152260
 PrefabInstance:
   m_ObjectHideFlags: 0
