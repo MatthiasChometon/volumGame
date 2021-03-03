@@ -5,11 +5,12 @@ using UnityEngine;
 [CreateAssetMenu (fileName = "New Inventory", menuName = "Inventory System/Inventory")]
 
 public class InventoryObject : ScriptableObject {
+    public GameObject warrior;
     private GameObject[] objectList;
     public List<InventorySlot> Container = new List<InventorySlot> ();
-    public List<InventorySlot> getInventory() {
-    return this.Container;
-}
+    public List<InventorySlot> getInventory () {
+        return this.Container;
+    }
     public void AddItem (ItemObject _item, int _amount) {
         bool hasItem = false;
         for (int i = 0; i < Container.Count; i++) {
@@ -22,7 +23,15 @@ public class InventoryObject : ScriptableObject {
         if (!hasItem) {
             Container.Add (new InventorySlot (_item, _amount));
         }
-    objectList = GameObject.FindGameObjectsWithTag ("object");
+
+        if (warrior.GetComponent<Warrior> ().warriorName == "player 1") {
+            objectList = GameObject.FindGameObjectsWithTag ("itemPlayer1");
+        }
+
+        if (warrior.GetComponent<Warrior> ().warriorName == "player 2") {
+            objectList = GameObject.FindGameObjectsWithTag ("itemPlayer2");
+        }
+
         foreach (GameObject item in objectList) {
             item.GetComponent<testInventory> ().testDisplay (Container);
         }

@@ -12,6 +12,8 @@ public class Warrior : MonoBehaviour {
     public string type = "";
     private PlayerMove playerMove;
     public string phase = "opponent turn";
+    public bool skipTurn = false;
+    public int oneMoreTurn = 0;
 
     void OnCollisionStay2D (Collision2D collision) {
         if (collision.gameObject.tag == "minotaur" || collision.gameObject.tag == "player") {
@@ -31,24 +33,28 @@ public class Warrior : MonoBehaviour {
     }
 
     public string takeDamage (float damage) {
-        this.lifePoints -= Mathf.Abs(damage - defensePoints);
-        if(this.lifePoints <= 0) {
+        this.lifePoints -= Mathf.Abs (damage - defensePoints);
+        if (this.lifePoints <= 0) {
             return "end game";
         }
         return "end phase";
-
     }
 
     public void chooseStrategy () {
         if (type == "boss") {
             if (inContact == true) {
                 phase = "my turn";
-                attack();
+                attack ();
             } else {
                 phase = "move";
             }
         } else {
-            phase = "my turn";
+            if (skipTurn == false) {
+                phase = "my turn";
+            } else {
+                phase = "end phase";
+                skipTurn = false;
+            }
         }
     }
 }

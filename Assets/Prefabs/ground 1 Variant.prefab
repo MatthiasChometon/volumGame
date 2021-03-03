@@ -17,7 +17,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.0024272}
+    oldSize: {x: 1.0931034, y: 1.1051724}
     newSize: {x: 1, y: 1.0024272}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -33,11 +33,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6871882328836376615, guid: f65fe4e0b1c030b42865307b749bf110,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.0931034
+      objectReference: {fileID: 0}
+    - target: {fileID: -6871882328836376615, guid: f65fe4e0b1c030b42865307b749bf110,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.1051724
+      objectReference: {fileID: 0}
     - target: {fileID: 4173699238317685972, guid: f65fe4e0b1c030b42865307b749bf110,
         type: 3}
       propertyPath: m_Name
       value: ground 1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4173699238317685973, guid: f65fe4e0b1c030b42865307b749bf110,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b052754f12efb924eabdeb0acdfca11b,
+        type: 3}
     - target: {fileID: 4173699238317685974, guid: f65fe4e0b1c030b42865307b749bf110,
         type: 3}
       propertyPath: m_LocalPosition.x

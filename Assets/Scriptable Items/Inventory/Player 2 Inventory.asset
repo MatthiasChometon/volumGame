@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8055038bd31f14c4b9af13fdb054031a, type: 3}
   m_Name: Player 2 Inventory
   m_EditorClassIdentifier: 
+  warrior: {fileID: 5229903704633576149, guid: 80b93cd33a2381b4ab7fdce082843e07, type: 3}
+  inventoryPanel: []
   Container: []
