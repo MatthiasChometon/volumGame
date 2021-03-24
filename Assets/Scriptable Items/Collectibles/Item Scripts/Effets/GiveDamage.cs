@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +11,8 @@ public class GiveDamage : ObjectItem
     {
         if (player.phase == "my turn")
         {
-            opponent.lifePoints -= 2;
+            opponent.takeDamage(2);
+            player.phase = "end phase";
             deleteOneFromInventory("Snake");
         }
     }

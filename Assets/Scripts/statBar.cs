@@ -25,7 +25,7 @@ public class statBar : MonoBehaviour {
 
     private void getStat () {
         sliderHealth.maxValue = player.lifePoints;
-        sliderDefense.maxValue = player.defensePoints;
+        sliderDefense.maxValue = 12;
     }
 
 }

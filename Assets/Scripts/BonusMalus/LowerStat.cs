@@ -2,18 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LowerStat : Stat {
+public class LowerStat : Stat
+{
 
-    public override void chooseBonusOrMalus (Collision2D collision) {
-        bonusOrMalusRange = Random.Range (1, 2);
-
-        switch (bonusOrMalusRange) {
-            case 1:
-                collision.gameObject.GetComponent<Warrior> ().attackPoints -= 1;
-                break;
-            case 2:
-                collision.gameObject.GetComponent<Warrior> ().lifePoints -= 1;
-                break;
-        }
+    public override void chooseBonusOrMalus(Collision2D collision)
+    {
+        collision.gameObject.GetComponent<Warrior>().defensePoints += 2;
+        Debug.Log(collision.gameObject.GetComponent<Warrior>().defensePoints);
     }
 }

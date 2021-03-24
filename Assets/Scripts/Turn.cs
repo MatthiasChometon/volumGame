@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Turn : MonoBehaviour {
+public class Turn : MonoBehaviour
+{
     public int turnNumber;
     public GameObject panelTurnInfo;
     public Text textTurnInfo;
@@ -12,64 +13,80 @@ public class Turn : MonoBehaviour {
     public Text textEndGameInfo;
     public List<Warrior> warriors;
     public ChangeScene changeScene;
+    public int lifePointsOrigin = 14;
 
-    void Start () {
+    void Start()
+    {
         turnNumber = 0;
-        StartCoroutine (displayTurnInfo (warriors[turnNumber].warriorName + " turn"));
+        StartCoroutine(displayTurnInfo(warriors[turnNumber].warriorName + " turn"));
     }
 
-    void Update () {
+    void Update()
+    {
 
-        if (warriors[turnNumber].phase == "opponent turn" && !panelTurnInfo.activeSelf) {
-            warriors[turnNumber].chooseStrategy ();
+        if (warriors[turnNumber].phase == "opponent turn" && !panelTurnInfo.activeSelf)
+        {
+            warriors[turnNumber].chooseStrategy();
         }
 
-        if (warriors[turnNumber].phase == "end phase") {
-            if (warriors[turnNumber].oneMoreTurn > 0) {
-                warriors[turnNumber].chooseStrategy ();
+        if (warriors[turnNumber].phase == "end phase")
+        {
+            if (warriors[turnNumber].oneMoreTurn > 0)
+            {
+                warriors[turnNumber].chooseStrategy();
                 warriors[turnNumber].oneMoreTurn -= 1;
             }
 
-            if (warriors[turnNumber].oneMoreTurn == 0) {
+            if (warriors[turnNumber].oneMoreTurn == 0)
+            {
                 warriors[turnNumber].phase = "opponent turn";
-                nextTurn ();
-                StartCoroutine (displayTurnInfo (warriors[turnNumber].warriorName + " turn"));
+                nextTurn();
+                StartCoroutine(displayTurnInfo(warriors[turnNumber].warriorName + " turn"));
             }
         }
 
-        if (warriors[turnNumber].phase == "end game") {
+        if (warriors[turnNumber].phase == "end game")
+        {
             string winners = "";
-            foreach (Warrior warrior in warriors) {
-                if (warrior.lifePoints > 0 && warrior.ObjectInContact != null) {
+            foreach (Warrior warrior in warriors)
+            {
+                if (warrior.lifePoints > 0 && warrior.ObjectInContact != null)
+                {
                     winners += warrior.warriorName + " ";
                 }
             }
-            Scene scene = SceneManager.GetActiveScene ();
+            Scene scene = SceneManager.GetActiveScene();
             warriors[turnNumber].phase = "wait";
-            StartCoroutine (endGame (winners + " win !", 2));
+            StartCoroutine(endGame(winners + " win !", 2));
         }
     }
 
-    public void nextTurn () {
-        if (turnNumber < (warriors.Count - 1)) {
+    public void nextTurn()
+    {
+        if (turnNumber < (warriors.Count - 1))
+        {
             turnNumber++;
-        } else {
+        }
+        else
+        {
             turnNumber = 0;
         }
     }
 
-    public IEnumerator displayTurnInfo (string info) {
-        panelTurnInfo.SetActive (true);
+    public IEnumerator displayTurnInfo(string info)
+    {
+        panelTurnInfo.SetActive(true);
         textTurnInfo.text = info;
-        yield return new WaitForSeconds (1);
-        panelTurnInfo.SetActive (false);
+        yield return new WaitForSeconds(1);
+        panelTurnInfo.SetActive(false);
     }
 
-    public IEnumerator endGame (string info, int timeToWait) {
-        panelTurnInfo.SetActive (true);
+    public IEnumerator endGame(string info, int timeToWait)
+    {
+        panelTurnInfo.SetActive(true);
         textTurnInfo.text = info;
-        yield return new WaitForSeconds (timeToWait);
-        panelTurnInfo.SetActive (false);
-        panelEndGameInfo.SetActive (true);
+        yield return new WaitForSeconds(timeToWait);
+        panelTurnInfo.SetActive(false);
+        panelEndGameInfo.SetActive(true);
     }
 }
