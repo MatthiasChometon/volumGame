@@ -15,7 +15,6 @@ public class DisplayInventory : MonoBehaviour
     void Start()
     {
         CreateDisplay();
-        
     }
 
     // Update is called once per frame

@@ -9,6 +9,7 @@ public class testInventory : MonoBehaviour {
     public Text objectCount;
 
     public void testDisplay (List<InventorySlot> inventory) {
+        Debug.Log(name);
         foreach (InventorySlot item in inventory) {
             if (item.item.name == name) {
                 objectItem.SetActive (true);

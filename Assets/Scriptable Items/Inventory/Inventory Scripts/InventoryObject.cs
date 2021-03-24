@@ -28,7 +28,7 @@ public class InventoryObject : ScriptableObject {
             objectList = GameObject.FindGameObjectsWithTag ("itemPlayer1");
         }
 
-        if (warrior.GetComponent<Warrior> ().warriorName == "player 2") {
+        if (warrior.GetComponent<Warrior> ().warriorName == "player2") {
             objectList = GameObject.FindGameObjectsWithTag ("itemPlayer2");
         }
 

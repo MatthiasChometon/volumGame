@@ -18,6 +18,8 @@ MonoBehaviour:
   items:
   - {fileID: 1231122244242271953, guid: 0a543a85f976b76418f225efff64707f, type: 3}
   - {fileID: 5714085765424213789, guid: f9c8ca48678952c4992ec453cd6b8666, type: 3}
+  - {fileID: 4856474997014450575, guid: 3d2c485f7ac110649948579b156311cd, type: 3}
+  - {fileID: 9173404346532977060, guid: 402f4e9e31e440943ab4b7f45b3af1f6, type: 3}
   origin: {fileID: 3997289266169688603, guid: d67aadf2004ec6446830de8e2d87ffb4, type: 3}
   BMOGenerated: 0
   cube: {fileID: 7690233231922235073}
