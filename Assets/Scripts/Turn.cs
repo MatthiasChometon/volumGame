@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,7 +13,6 @@ public class Turn : MonoBehaviour
     public Text textEndGameInfo;
     public List<Warrior> warriors;
     public ChangeScene changeScene;
-    public int lifePointsOrigin = 14;
 
     void Start()
     {
